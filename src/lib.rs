@@ -13,8 +13,9 @@ pub use mail_services::*;
 #[cfg(test)]
 mod try_mail {
 
-    use crate::{BillableItem, TemplateBuilder};
+    use crate::TemplateBuilder;
     use borsh::BorshSerialize;
+    use geyser_service_common::BillableItem;
     use smol::io::BufWriter;
     use xor_mailer_common::Envelope;
 

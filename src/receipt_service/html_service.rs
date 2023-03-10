@@ -1,47 +1,5 @@
+use geyser_service_common::BillableItem;
 use percy_dom::prelude::*;
-
-#[derive(Debug, Default)]
-pub struct BillableItem {
-    name: String,
-    cost: String,
-    img: String,
-}
-
-impl BillableItem {
-    pub fn new() -> Self {
-        BillableItem::default()
-    }
-
-    pub fn add_name(mut self, name: &str) -> Self {
-        self.name = name.to_owned();
-
-        self
-    }
-
-    pub fn add_cost(mut self, cost: &str) -> Self {
-        self.cost = cost.to_owned();
-
-        self
-    }
-
-    pub fn add_img(mut self, img: &str) -> Self {
-        self.img = img.to_owned();
-
-        self
-    }
-
-    pub fn name(&self) -> &str {
-        self.name.as_str()
-    }
-
-    pub fn cost(&self) -> &str {
-        self.cost.as_str()
-    }
-
-    pub fn img(&self) -> &str {
-        self.img.as_str()
-    }
-}
 
 #[derive(Debug, Default)]
 pub struct TemplateBuilder {
@@ -114,11 +72,11 @@ impl TemplateBuilder {
                 html! {
                 <tr>
                     <td style="width: 50px" style="text-align: center;">
-                        <img src={&item.img} alt="" srcset="" width="100px">
+                        <img src={&item.img().to_owned()} alt="" srcset="" width="100px">
                     </td>
                     <td style="width: 250px; padding: 50px;">
-                        <span style=" width: 100px; margin-right: 10px"> {&item.name} </span>
-                        <span style="color: rgb(24, 136, 211);  "> {&item.cost} </span>
+                        <span style=" width: 100px; margin-right: 10px"> {&item.name().to_owned()} </span>
+                        <span style="color: rgb(24, 136, 211);  "> {&item.cost().to_owned()} </span>
                     </td>
                 </tr>
                 }
