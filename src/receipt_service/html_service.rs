@@ -251,10 +251,9 @@ impl TemplateBuilder {
                                 <tr>
                                     <td>
                                         <a style="font-size: 10px"
-                                            href="https://explorer.solana.com/tx/4YmJ5LWKTPcT7yHy2rDhsHjUm8JJ1nAfJFfrDJFrjLBExLXy1RkPtri85gUPJLdRiNJHH1p8a8PBs3mVxR4XQG5j"> {"Tx
-                                        Signature:
-                                        4YmJ5LWKTPcT7yHy2rDhsHjUm8JJ1nAfJFfrDJFrjLBExLXy1RkPtri85gUPJLdRiNJHH1p8a8PBs3mVxR4XQG5j"}
+                                            href={tx_sign_url}> {"Tx Signature:"} {self.tx_signature.to_owned()}
                                         </a>
+                                        <div style="width: 20px; border: transparent"> </div>
                                     </td>
                                 </tr>
                                 <tr>
